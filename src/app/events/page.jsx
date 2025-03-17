@@ -34,7 +34,7 @@ const data = [
         venue: "LORDS ARENA",
         time: "",
         description: "",
-      },
+      }
     ],
   },
   {
@@ -56,9 +56,9 @@ const events = () => {
     <div className="min-h-screen text-3xl">
       <div className="mt-10 mb-5">
         <li className="w-[30%] max-w-[60%] h-fit mx-auto flex items-center justify-evenly border border-red-500">
-          <ul>DAY 1</ul>
-          <ul>DAY 2</ul>
-          <ul>DAY 3</ul>
+          <ul onClick={() => setDay(0)}>DAY 1</ul>
+          <ul onClick={() => setDay(1)}>DAY 2</ul>
+          <ul onClick={() => setDay(2)}>DAY 3</ul>
         </li>
       </div>
       <div className="text-2xl">
