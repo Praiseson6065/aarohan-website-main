@@ -9,21 +9,21 @@ const data = [
         name: "Event 1",
         poster: "/assets/MainBG.png",
         venue: "LORDS ARENA",
-        time: "",
+        time: "04:00 P.M.",
         description: "",
       },
       {
         name: "Event 2",
         poster: "/assets/MainBG.png",
         venue: "LORDS ARENA",
-        time: "",
+        time: "05:00 P.M.",
         description: "",
       },
       {
         name: "Event 3",
         poster: "/assets/MainBG.png",
         venue: "LORDS ARENA",
-        time: "",
+        time: "06:00 P.M.",
         description: "",
       },
     ],
@@ -53,19 +53,19 @@ const events = () => {
     const [eventToggle, setEventToggle] = useState(true);
 
   return (
-    <div className="min-h-screen text-2xl select-none">
+    <div className="w-screen min-h-screen text-base md:text-xl lg:text-2xl select-none">
       <div className="mt-10 mb-5">
-        <li className="w-[30%] max-w-[60%] h-fit mx-auto flex items-center justify-evenly">
+        <li className="w-full md:w-[60%] lg:w-[35=8%] xl-[25%] h-fit mx-auto flex px-[10%] sm:px-[20%] md:px-0 items-center justify-between md:justify-evenly text-nowrap">
           <ul className={`${day===0?'text-[#FF9500]':''} transition-all duration-300`} onClick={() => setDay(0)}>DAY 1</ul>
           <ul className={`${day===1?'text-[#FF9500]':''} transition-all duration-300`} onClick={() => setDay(1)}>DAY 2</ul>
           <ul className={`${day===2?'text-[#FF9500]':''} transition-all duration-300`} onClick={() => setDay(2)}>DAY 3</ul>
         </li>
       </div>
-      <div className="text-base cursor-default">
-        <div className="relative w-[18%] max-w-1/2 h-fit mx-auto px-5 py-1 flex items-center justify-between border border-x-2 border-[#FF9500] rounded-4xl">
-          <span className={`absolute w-[50%] h-[calc(100%-6px)] top-[3px] left-[3px] bg-[#C07A00] border rounded-4xl ${!eventToggle? 'translate-x-[calc(100%-6px)]':''} -z-10 transition-all duration-700 ease-out`}></span>
-          <div className="w-1/2 text-center" onClick={() => setEventToggle(true)}>EVENTS</div>
-          <div className="w-1/2 text-center" onClick={() => setEventToggle(false)}>WORKSHOPS</div>
+      <div className="w-full h-[36px] tracking-tighter sm:tracking-tight md:tracking-normal text-sm md:text-base cursor-default">
+        <div className="relative h-full w-[240px] sm:w-[250px] md:w-[33%] lg:w-[24%] xl:w-[20%] max-w-[350px] mx-auto flex justify-between px-5 py-1 border border-x-2 border-[#FF9500] rounded-4xl">
+          <span className={`absolute w-1/2 h-[calc(100%-6px)] top-[3px] left-[3px] bg-[#C07A00] border rounded-4xl ${!eventToggle? 'translate-x-[calc(100%-6px)]':''} -z-10 transition-all duration-700 ease-out`}></span>
+          <div className="inline-block w-1/2 text-left pl-3 text-nowrap" onClick={() => setEventToggle(true)}>EVENTS</div>
+          <div className="inline-block w-1/2 text-right pr-3 text-nowrap" onClick={() => setEventToggle(false)}>WORKSHOPS</div>
         </div>
       </div>
 
