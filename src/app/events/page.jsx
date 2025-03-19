@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import EventCard from "@/components/EventCard/page";
-// import { fetchGoogleSheetData, processSheetData } from "./util";
 
 const GOOGLE_SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID;
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
@@ -9,6 +8,8 @@ const SHEET_NAME = "Form responses 1";
 const SHEET_URL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
 
 const events = () => {
+
+
   const [day, setDay] = useState(0);
   const [dataE, setDataE] = useState([]);
   const [rawData, setRawData] = useState([]);
@@ -105,7 +106,7 @@ const events = () => {
   }
 
   return (
-    <div className="w-screen min-h-screen text-base md:text-xl lg:text-2xl select-none  bg-cover bg-center ">
+    <div className="w-screen min-h-screen text-base md:text-xl lg:text-2xl select-none bg-[url('/assets/MainBG.png')] bg-cover bg-center ">
       <div className="mt-24 mb-5">
         <ul className="w-[350px] sm:w-[640px] md:w-[700px] lg:w-[800px] xl:w-[900px] h-fit mx-auto flex items-center justify-evenly text-nowrap">
           {rawData.map((_, index) => (
@@ -143,13 +144,13 @@ const events = () => {
         </div>
       </div>
 
-      <div className="mt-16 w-screen flex items-center justify-center p-0 md:p-5 lg:p-0">
+      <div className="mt-16 w-screen flex items-center justify-center  md:p-5 lg:p-0">
         <ul className="w-full grid gap-x-[20px] md:grid-cols-2 xl:grid-cols-3">
           {rawData.length > 0 && rawData[day] ? (
             (eventToggle ? rawData[day].events : rawData[day].workshops).map(
               (event, key) => (
                 <li key={key}>
-                  <EventCard event={event} />
+                  <EventCard event={event}  />
                 </li>
               )
             )
