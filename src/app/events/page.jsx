@@ -2,10 +2,6 @@
 import React, { useEffect, useState} from "react";
 import EventCard from "@/components/EventCard/page";
 
-const GOOGLE_SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID;
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const SHEET_NAME = "Form responses 1";
-const SHEET_URL = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
 
 const events = () => {
 
@@ -83,9 +79,10 @@ const events = () => {
   };
   const fetchGoogleSheetData = async () => {
     try {
-      const response = await fetch(SHEET_URL);
+      const response = await fetch("/api/sheets");
       const data = await response.json();
-      setRawData(processSheetData(data.values));
+
+      setRawData(processSheetData(data.data));
     } catch (error) {
       setError("Error fetching data: ", error);
     } finally {

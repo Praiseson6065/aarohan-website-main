@@ -5,7 +5,7 @@ export default function ContactUs() {
     return (
         <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden" 
              style={{ backgroundImage: "url('/assets/MainBG.png')" }}>
-                <div className="container mx-auto px-8 mt-4  sm:px-6 lg:px-20 py-8 sm:py-16">
+                <div className="container mx-auto px-8 mt-16 md:mt-8  sm:px-6 lg:px-20 py-8 sm:py-16">
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl text-[#DC7D00] text-center  leading-tight  drop-shadow-[3px_3px_3px_white]">
                     CONTACT US
                 </h1>
@@ -36,31 +36,31 @@ export default function ContactUs() {
                     <p className="text-sm sm:text-1xl mt-5 text-[#DC7D00]">Overall Coordinators, Aarohan 2025</p>
                     <div className="flex flex-wrap gap-4 mt-6 justify-center">
                         <a href="mailto:mntcnitd@gmail.com">
-                            <button className="flex gap-3 bg-[#656565] px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start  ml-0 ">
+                            <button className="flex gap-3 bg-[#656565] items-center px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start  ml-0 ">
                                 <FaEnvelope size={24} className="w-6 h-6 sm:w-8 sm:h-8" />
                                 Tathagata Das
                             </button>
                         </a>
                         <a href="contact@nitdgplug.org">
-                            <button className="flex gap-3 bg-[#656565] px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0">
+                            <button className="flex gap-3 bg-[#656565] items-center px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0">
                                 <FaEnvelope size={24} className="w-6 h-6 sm:w-8 sm:h-8" />
                                 Suman Karmakar
                             </button>
                         </a>
                         <a href="mailto:convenerandhead@ccanitd.in">
-                            <button className="flex gap-3 bg-[#656565] px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0 ">
+                            <button className="flex gap-3 bg-[#656565] items-center px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0 ">
                                 <FaEnvelope size={24} className="w-6 h-6 sm:w-8 sm:h-8" />
                                 Rohan Agarwal
                             </button>
                         </a>
                         <a href="mailto:president.saeindia@nitdgp.ac.in">
-                            <button className="flex gap-3 bg-[#656565] px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0">
+                            <button className="flex gap-3 bg-[#656565] items-center px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0">
                                 <FaEnvelope size={24} className="w-6 h-6 sm:w-8 sm:h-8" />
                                 Siddharth Khandelwal
                             </button>
                         </a>
-                        <a href="mailto:ar.21u10386@btech.nitdgp.ac.in">
-                            <button className="flex gap-3 bg-[#656565] px-3 sm:px-5 py-2 sm:py-3 rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0 0">
+                        <a href="mailto:ar.21u10386@btech.nitdgp.ac.in" >
+                            <button className="flex gap-3 bg-[#656565] px-3 sm:px-5 py-2 sm:py-3  items-center rounded-lg hover:bg-gray-700 w-full sm:w-[345px] text-white justify-center sm:justify-start ml-0 0">
                                 <FaEnvelope size={24} className="w-6 h-6 sm:w-8 sm:h-8" />
                                 Abhishek Ranjan
                             </button>
