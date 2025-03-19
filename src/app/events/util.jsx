@@ -49,12 +49,12 @@ export const processSheetData = (data) => {
         schedule[dayIndex] = { events: [], workshops: [] };
       }
   
-      if (entry["Type"].toLowerCase() === "events") {
+      if (entry["Type"].toLowerCase() === "event") {
         schedule[dayIndex].events.push(formattedEntry);
-      } else if (entry["Type"].toLowerCase() === "workshops") {
+      } else if (entry["Type"].toLowerCase() === "workshop") {
         schedule[dayIndex].workshops.push(formattedEntry);
       }
     });
-  
+    console.log(schedule)
     return schedule;
   };

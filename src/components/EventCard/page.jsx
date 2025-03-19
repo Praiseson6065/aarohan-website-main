@@ -8,7 +8,7 @@ const EventCard = ({ event }) => {
   const onClickHandler = () => {
     setIsModalOpen(!isModalOpen);
   };
-
+  console.log(event)
   return (
     <div>
       {isModalOpen && (
@@ -100,8 +100,12 @@ const EventCard = ({ event }) => {
               translateZ={20}
               as="button"
               className="px-4 py-2 rounded-xl bg-[#E38501]"
+              
             >
+              <a href={event.registrationLink} target="_blank" rel="noreferrer">
               Register
+
+              </a>
             </CardItem>
           </div>
         </CardBody>
