@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/page";
+import Footer from "@/components/Footer/page";
 
 const aerospace = localFont({
   src: "./fonts/aerospace_regular.ttf",
@@ -22,11 +23,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${aerospace.variable} antialiased flex flex-col min-h-screen justify-between`}
+        className={`${aerospace.variable} antialiased flex flex-col  justify-between`}
       >
         <Navbar />
         {children}
+        <Footer/>
       </body>
+
     </html>
   );
 }

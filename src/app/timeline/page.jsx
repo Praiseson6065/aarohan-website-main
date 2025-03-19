@@ -13,7 +13,6 @@ export default function Timeline(){
             </div>
           </div>
         </div>
-        <div className="min-h-screen flex items-center py-12 "></div>
       </>
     );
   }
