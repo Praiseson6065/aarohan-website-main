@@ -48,6 +48,18 @@ const Footer = () => {
           <h1 className="text-2xl md:text-5xl inline-block text-nowrap">TEAM AAVISHKAR</h1>
         </div>
         <div className="w-screen flex flex-col md:flex-row items-center justify-between md:justify-evenly mt-5">
+          <div className="w-full  flex flex-col items-center justify-between mb-4 md:mb-0">
+            <div className="relative w-[80px] h-[80px] rounded-full overflow-hidden">
+              <Image
+                src={"/assets/GLUG.png"}
+                alt="GLUG"
+                fill
+                objectFit="cover"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <div className="text-3xl mt-2">GLUG</div>
+          </div>
           <div className="w-full flex flex-col items-center justify-between mb-4 md:mb-0">
             <div className="relative w-[80px] h-[80px]  overflow-hidden">
               <Image
@@ -71,18 +83,6 @@ const Footer = () => {
               />
             </div>
             <div className="text-3xl mt-2">Recursion</div>
-          </div>
-          <div className="w-full  flex flex-col items-center justify-between mb-4 md:mb-0">
-            <div className="relative w-[80px] h-[80px] rounded-full overflow-hidden">
-              <Image
-                src={"/assets/GLUG.png"}
-                alt="GLUG"
-                fill
-                objectFit="cover"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-            <div className="text-3xl mt-2">GLUG</div>
           </div>
           <div className="w-full  flex flex-col items-center justify-between mb-4 md:mb-0">
             <div className="relative w-[80px] h-[80px] rounded-full overflow-hidden">

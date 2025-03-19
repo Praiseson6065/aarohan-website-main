@@ -8,7 +8,6 @@ const EventCard = ({ event }) => {
   const onClickHandler = () => {
     setIsModalOpen(!isModalOpen);
   };
-  console.log(event);
   return (
     <div>
       {isModalOpen && (
@@ -56,7 +55,7 @@ const EventCard = ({ event }) => {
       )}
 
       <CardContainer className="inter-var">
-        <CardBody className="bg-[#2a04047f] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[280px] sm:w-[360px] md:w-[350px] lg:w-[380px] [@media(min-width:1600px)]:w-[400px] h-[430px] sm:h-auto rounded-xl p-6 border shadow-[0px_0px_5px_4px_rgba(217,119,6,0.5)]">
+        <CardBody className="bg-[#2a04047f] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[360px] h-[500px] rounded-xl p-6 border shadow-[0px_0px_5px_4px_rgba(217,119,6,0.5)]">
           <CardItem
             translateZ="50"
             className="w-full text-center text-base  font-bold "

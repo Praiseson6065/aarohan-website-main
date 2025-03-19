@@ -3,73 +3,6 @@ import React, { useEffect, useState } from "react";
 import EventCard from "@/components/EventCard/page";
 // import { fetchGoogleSheetData, processSheetData } from "./util";
 
-const data = [
-  {
-    events: [
-      {
-        name: "Event 1",
-        poster: "/assets/MainBG.png",
-        venue: "LORDS ARENA",
-        time: "04:00 P.M.",
-        description:
-          "loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsum loremipsumloremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsum loremipsumloremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsum loremipsumloremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsum loremipsumloremipsum loremipsumloremipsum loremipsum",
-      },
-      {
-        name: "Event 2",
-        poster: "/assets/MainBG.png",
-        venue: "LORDS ARENA",
-        time: "05:00 P.M.",
-        description: "",
-      },
-      {
-        name: "Event 3",
-        poster: "/assets/MainBG.png",
-        venue: "LORDS ARENA",
-        time: "06:00 P.M.",
-        description: "",
-      },
-      {
-        name: "Event 4",
-        poster: "/assets/MainBG.png",
-        venue: "LORDS ARENA",
-        time: "06:00 P.M.",
-        description: "",
-      },
-      {
-        name: "Event 5",
-        poster: "/assets/MainBG.png",
-        venue: "LORDS ARENA",
-        time: "06:00 P.M.",
-        description: "",
-      },
-      {
-        name: "Event 6",
-        poster: "/assets/MainBG.png",
-        venue: "LORDS ARENA",
-        time: "06:00 P.M.",
-        description: "",
-      },
-    ],
-    workshops: [
-      {
-        name: "Workshop 1",
-        poster:
-          "https://instagram.fccu9-4.fna.fbcdn.net/v/t51.29350-15/484966507_2887918864704185_3581177697945092104_n.heic?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fccu9-4.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QGwWrcLa10_a7yB9z9EwAXW5mlg-4E49I-u0fEW-gaRyDg0eTm4lftAGoGVRWipsK8OYX3CyBechi60v188a_uS&_nc_ohc=Ic6lCLeEE_MQ7kNvgGvVeHe&_nc_gid=RKMynpVMk1SH0WGCW7qboA&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzU5MDgwMDk0MTExMjYwMjE0MA%3D%3D.3-ccb7-5&oh=00_AYGICA0nTrCy4rsEhaPOCOQGTMOFp0L-x3clxYUnARKVWQ&oe=67E08948&_nc_sid=10d13b",
-        venue: "LORDS ARENA",
-        time: "03:00 P.M.",
-        description: "",
-      },
-    ],
-  },
-  {
-    events: [],
-    workshops: [],
-  },
-  {
-    events: [],
-    workshops: [],
-  },
-];
 const GOOGLE_SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID;
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const SHEET_NAME = "Form responses 1";
@@ -145,11 +78,9 @@ const events = () => {
         schedule[dayIndex].workshops.push(formattedEntry);
       }
     });
-    console.log(schedule);
     return schedule;
   };
   const fetchGoogleSheetData = async () => {
-    console.log(SHEET_URL);
     try {
       const response = await fetch(SHEET_URL);
       const data = await response.json();
@@ -174,7 +105,7 @@ const events = () => {
   }
 
   return (
-    <div className="w-screen min-h-screen text-base md:text-xl lg:text-2xl select-none bg-[url('/assets/MainBG.png')] bg-cover bg-center ">
+    <div className="w-screen min-h-screen text-base md:text-xl lg:text-2xl select-none  bg-cover bg-center ">
       <div className="mt-24 mb-5">
         <ul className="w-[350px] sm:w-[640px] md:w-[700px] lg:w-[800px] xl:w-[900px] h-fit mx-auto flex items-center justify-evenly text-nowrap">
           {rawData.map((_, index) => (
