@@ -3,7 +3,7 @@
     images: {
       localPatterns: [
         {
-          pathname: "/assets/Images/**",
+          pathname: "/assets/**",
           search: "",
         },
       ],
