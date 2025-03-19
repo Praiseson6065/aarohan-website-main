@@ -8,7 +8,7 @@ const EventCard = ({ event }) => {
   const onClickHandler = () => {
     setIsModalOpen(!isModalOpen);
   };
-  console.log(event)
+  console.log(event);
   return (
     <div>
       {isModalOpen && (
@@ -35,14 +35,20 @@ const EventCard = ({ event }) => {
                   Time: {event.time}
                 </div>
               </div>
-              <div className="w-full h-[250px] font-normal text-xs text-neutral-400 overflow-y-auto pt-4">
+              <div className="w-full h-[250px]   font-normal text-xs text-neutral-400 overflow-y-auto pt-4">
                 {event.description}
               </div>
               <button
                 className="font-semibold text-base text-black bg-[#FF9500] mt-3 py-3 px-4 rounded-lg"
                 onClick={() => onClickHandler()}
               >
-                Register
+                <a
+                  href={event.registrationLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Register
+                </a>
               </button>
             </div>
           </div>
@@ -53,7 +59,7 @@ const EventCard = ({ event }) => {
         <CardBody className="bg-[#2a04047f] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[280px] sm:w-[360px] md:w-[350px] lg:w-[380px] [@media(min-width:1600px)]:w-[400px] h-[430px] sm:h-auto rounded-xl p-6 border shadow-[0px_0px_5px_4px_rgba(217,119,6,0.5)]">
           <CardItem
             translateZ="50"
-            className="w-full text-center text-base md:text-xl font-bold "
+            className="w-full text-center text-base  font-bold "
           >
             {event.name}
           </CardItem>
@@ -100,11 +106,9 @@ const EventCard = ({ event }) => {
               translateZ={20}
               as="button"
               className="px-4 py-2 rounded-xl bg-[#E38501]"
-              
             >
               <a href={event.registrationLink} target="_blank" rel="noreferrer">
-              Register
-
+                Register
               </a>
             </CardItem>
           </div>
