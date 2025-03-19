@@ -8,27 +8,27 @@ const EventCard = ({ event }) => {
   return (
     <div>
       <CardContainer className="inter-var">
-        <CardBody className="bg-[#D9D9D9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+        <CardBody className="bg-[#D9D9D9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[280px] sm:w-[360px] md:w-[350px] lg:w-[380px] [@media(min-width:1600px)]:w-[400px] h-[430px] sm:h-auto rounded-xl p-6 border  ">
           <CardItem
             translateZ="50"
-            className="w-full text-center text-xl font-bold text-black"
+            className="w-full text-center text-base md:text-xl font-bold text-black"
           >
             {event.name}
           </CardItem>
           <CardItem
             as="div"
             translateZ="60"
-            className="text-neutral-500 text-sm max-w-sm mt-2 text-neutral-700"
+            className="text-[10px] md:text-sm text-nowrap max-w-sm mt-2 text-neutral-700"
           >
-            <div className="w-[110%] h-fit flex items-center justify-between">
+            <div className="w-full h-fit flex items-center justify-between">
               <span className="flex items-center">
-                <span className="mr-3">
+                <span className="mr-1.5 md:mr-3">
                   <Clock />
                 </span>
                 <span>{event.time}</span>
               </span>
               <span className="flex items-center justify-center">
-                <span className="mr-3">{event.venue}</span>
+                <span className="mr-1.5 md:mr-3">{event.venue}</span>
                 <span>
                   <MapPin />
                 </span>
@@ -44,19 +44,19 @@ const EventCard = ({ event }) => {
               alt="thumbnail"
             />
           </CardItem>
-          <div className="flex justify-between items-center mt-20">
+          <div className="w-full flex justify-between items-center mt-12 sm:mt-20 text-nowrap text-[9px] md:text-xs font-bold">
             <CardItem
               translateZ={20}
               as="button"
               target="__blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal bg-[#E38501]"
+              className="px-4 py-2 rounded-xl bg-[#E38501]"
             >
               Know more
             </CardItem>
             <CardItem
               translateZ={20}
               as="button"
-              className="px-4 py-2 rounded-xl bg-[#E38501] text-xs font-bold"
+              className="px-4 py-2 rounded-xl bg-[#E38501]"
             >
               Register
             </CardItem>
