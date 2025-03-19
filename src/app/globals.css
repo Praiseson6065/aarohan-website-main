@@ -83,6 +83,7 @@
 
 body {
   font-family: var(--font-aerospace);
+  background: linear-gradient(90deg, #120101 0%, #2a0303 100%);
 }
 .dark {
   --background: #000000;

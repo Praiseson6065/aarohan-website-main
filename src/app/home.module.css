@@ -1,6 +1,4 @@
-body {
-  background: linear-gradient(90deg, #120101 0%, #2a0303 100%);
-}
+
 #title-container {
   display: flex;
   flex-direction: column;
