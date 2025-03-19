@@ -1,7 +1,7 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar/page";
-import Footer from "@/components/Footer/page";
+import { LayoutComponent } from "./layoutComponent";
 
 const aerospace = localFont({
   src: "./fonts/aerospace_regular.ttf",
@@ -17,17 +17,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
+  
 
 
   return (
     <html lang="en">
       <body
         className={`${aerospace.variable} antialiased flex flex-col  justify-between`}
-      >
-        <Navbar />
-        {children}
-        <Footer/>
+      > <LayoutComponent>{children}</LayoutComponent>
       </body>
 
     </html>
