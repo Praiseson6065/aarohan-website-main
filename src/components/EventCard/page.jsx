@@ -1,14 +1,56 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { Clock, MapPin } from "lucide-react";
-import Link from "next/link";
-
 const EventCard = ({ event }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const onClickHandler = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div>
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-[#2a04047f] backdrop-blur-[2px] flex items-center justify-center z-10 transition-all duration-500"
+          onClick={onClickHandler}
+        >
+          <div
+            className="relative w-[850px] h-[500px] flex items-center justify-start px-10 bg-[#2a0404fa] border border-[#FF9500] rounded-4xl shadow-lg transition-all duration-500"
+            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside the modal
+          >
+            <div className="relative w-[275px] h-[400px] overflow-hidden rounded-xl">
+              <Image
+                src={event.poster}
+                fill
+                className="object-cover w-full h-full"
+                alt="thumbnail"
+              />
+            </div>
+            <div className="w-[500px] h-[400px] flex flex-col items-start justify-between pl-3 py-5">
+              <div>
+                <div className="font-bold text-white">{event.name}</div>
+                <div className="text-base font-semibold mt-1 text-neutral-200">
+                  Time: {event.time}
+                </div>
+              </div>
+              <div className="w-full h-[250px] font-normal text-xs text-neutral-400 overflow-y-auto pt-4">
+                {event.description}
+              </div>
+              <button
+                className="font-semibold text-base text-black bg-[#FF9500] mt-3 py-3 px-4 rounded-lg"
+                onClick={() => onClickHandler()}
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <CardContainer className="inter-var">
-        <CardBody className="bg-[#D9D9D9] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[280px] sm:w-[360px] md:w-[350px] lg:w-[380px] [@media(min-width:1600px)]:w-[400px] h-[430px] sm:h-auto rounded-xl p-6 border  ">
+        <CardBody className="bg-[#2a04047f] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[280px] sm:w-[360px] md:w-[350px] lg:w-[380px] [@media(min-width:1600px)]:w-[400px] h-[430px] sm:h-auto rounded-xl p-6 border shadow-[0px_0px_5px_4px_rgba(217,119,6,0.5)]">
           <CardItem
             translateZ="50"
             className="w-full text-center text-base md:text-xl font-bold text-black"
@@ -18,7 +60,7 @@ const EventCard = ({ event }) => {
           <CardItem
             as="div"
             translateZ="60"
-            className="text-[10px] md:text-sm text-nowrap max-w-sm mt-2 text-neutral-700"
+            className="text-[10px] md:text-sm text-nowrap max-w-sm mt-2 text-neutral-100"
           >
             <div className="w-full h-fit flex items-center justify-between">
               <span className="flex items-center">
@@ -37,19 +79,20 @@ const EventCard = ({ event }) => {
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4">
             <Image
-              src="/assets/MainBG.png"
+              src={event.poster}
               height="1000"
               width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+              className="h-85 w- w-full object-cover rounded-xl group-hover/card:shadow-xl"
               alt="thumbnail"
             />
           </CardItem>
-          <div className="w-full flex justify-between items-center mt-12 sm:mt-20 text-nowrap text-[9px] md:text-xs font-bold">
+          <div className="w-full flex justify-between items-center mt-4 sm:mt-4 text-nowrap text-[9px] md:text-xs font-bold">
             <CardItem
               translateZ={20}
               as="button"
               target="__blank"
               className="px-4 py-2 rounded-xl bg-[#E38501]"
+              onClick={onClickHandler}
             >
               Know more
             </CardItem>
