@@ -10,41 +10,40 @@ import team from "../../public/assets/Images/team_aavishkar.jpg";
 import ResponsiveMarquee from "@/components/Aninline/page";
 import Faqs from "@/components/Faqs/page";
 import Carousel from "@/components/Carousel/page";
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 gsap.registerPlugin(ScrollTrigger);
-
 
 export default function Home() {
   const carouselSlides = [
     {
       id: 1,
-      image: "/assets/Images/carousel.jpeg",
+      image: "/assets/Images/Home.jpg",
       title: "Home",
       link: "/",
     },
     {
       id: 2,
-      image: "/assets/Images/carousel.jpeg",
+      image: "/assets/Images/Timeline.jpeg",
       title: "Timeline",
       link: "/timeline",
     },
     {
       id: 3,
-      image: "/assets/Images/carousel.jpeg",
+      image: "/assets/Images/Events.jpg",
       title: "Events",
       link: "/events",
     },
     {
       id: 4,
-      image: "/assets/Images/carousel.jpeg",
+      image: "/assets/Images/Comms.png",
       title: "Contact Us",
       link: "/contact-us",
     },
     {
       id: 5,
-      image: "/assets/Images/carousel.jpeg",
+      image: "/assets/Images/Sponsors.png",
       title: "Sponsors",
       link: "/sponsors",
     },
@@ -80,16 +79,16 @@ export default function Home() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.4, ease: "easeInOut" }
-    }
+      transition: { duration: 0.4, ease: "easeInOut" },
+    },
   };
 
   const textVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeInOut" }
-    }
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
   };
 
   useEffect(() => {
@@ -99,8 +98,6 @@ export default function Home() {
       controls.start("hidden");
     }
   }, [controls, inView]);
-
-
 
   useEffect(() => {
     import("aos").then((AOS) => {
@@ -144,19 +141,24 @@ export default function Home() {
 
   // Start Counter Animation on Reload
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsCounterVisible(true);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsCounterVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    if (counterContainerRef.current) observer.observe(counterContainerRef.current);
+    if (counterContainerRef.current)
+      observer.observe(counterContainerRef.current);
 
     return () => {
-      if (counterContainerRef.current) observer.unobserve(counterContainerRef.current);
+      if (counterContainerRef.current)
+        observer.unobserve(counterContainerRef.current);
     };
   }, []);
 
@@ -173,12 +175,12 @@ export default function Home() {
     const counterProxy = {
       events: 0,
       attendees: 0,
-      days: 0
+      days: 0,
     };
 
     // Create a single timeline for all counters
     const tl = gsap.timeline({
-      defaults: { duration: 2.5, ease: "expo.out" }
+      defaults: { duration: 2.5, ease: "expo.out" },
     });
 
     tl.to(counterProxy, {
@@ -187,17 +189,25 @@ export default function Home() {
         setCounters({
           events: Math.ceil(counterProxy.events),
           attendees: Math.ceil(counterProxy.attendees),
-          days: Math.ceil(counterProxy.days)
+          days: Math.ceil(counterProxy.days),
         });
       },
-      ease: "power4.out"
+      ease: "power4.out",
     })
-      .to(counterProxy, {
-        attendees: targetValues.attendees,
-      }, 0) // Start at same time
-      .to(counterProxy, {
-        days: targetValues.days,
-      }, 0);
+      .to(
+        counterProxy,
+        {
+          attendees: targetValues.attendees,
+        },
+        0
+      ) // Start at same time
+      .to(
+        counterProxy,
+        {
+          days: targetValues.days,
+        },
+        0
+      );
 
     return () => {
       tl.kill(); // Cleanup animation on unmount
@@ -233,11 +243,17 @@ export default function Home() {
       <div className="bg-gradient-to-r from-[#120101] to-[#2A0404]">
         <div className=" m-0 pb-25">
           <div className="container mx-auto mt-40">
-            <h2 className="text-[#FEF1DA] px-1.5 text-center text-4xl md:text-5xl mb-30" data-aos="fade-down">
+            <h2
+              className="text-[#FEF1DA] px-1.5 text-center text-4xl md:text-5xl mb-30"
+              data-aos="fade-down"
+            >
               2nd Largest Technical Fest In Eastern India
             </h2>
             <div className="flex justify-center">
-              <div ref={counterContainerRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+              <div
+                ref={counterContainerRef}
+                className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center"
+              >
                 {/* EVENT COUNTER */}
                 <div data-aos="fade-up" data-aos-delay="100">
                   <div className="flex justify-center">
@@ -248,7 +264,9 @@ export default function Home() {
                       {counters.events}+
                     </div>
                   </div>
-                  <div className="text-[#FEF1DA] uppercase tracking-wider">EVENTS</div>
+                  <div className="text-[#FEF1DA] uppercase tracking-wider">
+                    EVENTS
+                  </div>
                 </div>
 
                 {/* ATTENDEE COUNTER */}
@@ -261,7 +279,9 @@ export default function Home() {
                       {counters.attendees}+
                     </div>
                   </div>
-                  <div className="text-[#FEF1DA] uppercase tracking-wider">ATTENDEES</div>
+                  <div className="text-[#FEF1DA] uppercase tracking-wider">
+                    ATTENDEES
+                  </div>
                 </div>
 
                 {/* DAYS COUNTER */}
@@ -274,9 +294,10 @@ export default function Home() {
                       {counters.days}
                     </div>
                   </div>
-                  <div className="text-[#FEF1DA] uppercase tracking-wider">DAYS</div>
+                  <div className="text-[#FEF1DA] uppercase tracking-wider">
+                    DAYS
+                  </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -295,9 +316,7 @@ export default function Home() {
             className={`text-7xl md:text-8xl pb-5 font-extrabold text-center flex justify-center mt-20 mb-12`}
             variants={textVariants}
           >
-            <motion.span className="text-[#FEF1DA]">
-              DIVE
-            </motion.span>
+            <motion.span className="text-[#FEF1DA]">DIVE</motion.span>
 
             <motion.span
               className="mx-4 text-transparent"
