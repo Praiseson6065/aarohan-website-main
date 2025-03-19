@@ -25,7 +25,7 @@ export default function Home() {
     },
     {
       id: 2,
-      image: "/assets/Images/Timeline.jpeg",
+      image: "/assets/Images/TImeline.jpeg",
       title: "Timeline",
       link: "/timeline",
     },
