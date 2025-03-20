@@ -45,7 +45,9 @@ const Footer = () => {
 
       <div className="mt-16 w-screen flex flex-col items-center">
         <div className="bg-gradient-to-r from-[#AE6600] via-[#FF9500] to-[#AE6600] bg-clip-text text-transparent mb-5">
-          <h1 className="text-2xl md:text-5xl inline-block text-nowrap">TEAM AAVISHKAR</h1>
+          <h1 className="text-2xl md:text-5xl inline-block text-nowrap">
+            TEAM AAVISHKAR
+          </h1>
         </div>
         <div className="w-screen flex flex-col md:flex-row items-center justify-between md:justify-evenly mt-5">
           <div className="w-full  flex flex-col items-center justify-between mb-4 md:mb-0">
@@ -113,49 +115,48 @@ const Footer = () => {
 
       <div className="mt-16 w-screen h-[200px] flex flex-col items-center justify-evenly">
         <div className="w-[300px] flex items-center justify-evenly">
+          {/* Twitter */}
           <div className="box-border p-2 w-16 h-16 border border-[#ED8600] flex items-center justify-center">
-            <a
-              href="https://x.com/aarohan_nitdgp"
-              className="w-full h-full text-center"
-              target="_blank"
-            >
+            <a href="https://x.com/aarohan_nitdgp" target="_blank">
               <FontAwesomeIcon
                 icon={faXTwitter}
-                className="text-[#ED8600] font-light"
+                className="text-[#ED8600]"
+                style={{ width: "40px", height: "40px" }}
               />
             </a>
           </div>
+
+          {/* Instagram */}
           <div className="box-border p-2 w-16 h-16 border border-[#ED8600] flex items-center justify-center">
-            <a
-              href="https://www.instagram.com/arhn.nitd/"
-              className="w-full h-full text-center"
-              target="_blank"
-            >
+            <a href="https://www.instagram.com/arhn.nitd/" target="_blank">
               <FontAwesomeIcon
                 icon={faInstagram}
-                className="text-[#ED8600] font-light w-full h-full"
+                className="text-[#ED8600]"
+                style={{ width: "40px", height: "40px" }}
               />
             </a>
           </div>
+
+          {/* Facebook */}
           <div className="box-border p-2 w-16 h-16 border border-[#ED8600] flex items-center justify-center">
             <a href="https://www.facebook.com/arhn.nitd/" target="_blank">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="50"
                 viewBox="0 0 24 24"
                 fill="#ED8600"
                 stroke="#ED8600"
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="lucide lucide-facebook"
+                width="40"
+                height="40"
               >
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
             </a>
           </div>
         </div>
+
         <div className="w-full flex flex-col items-center justify-evenly">
           <div>
             Made with{" "}

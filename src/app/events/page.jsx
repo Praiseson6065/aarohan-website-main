@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState} from "react";
 import EventCard from "@/components/EventCard/page";
-
+import EventData from "./events.json"
 
 const events = () => {
 
@@ -92,7 +92,10 @@ const events = () => {
   };
 
   useEffect(() => {
-    fetchGoogleSheetData();
+    // fetchGoogleSheetData();
+    // console.log(EventData,"dhdghd")
+    setRawData(processSheetData(EventData.data));
+    setLoading(false);
   }, []);
 
   if (loading) {

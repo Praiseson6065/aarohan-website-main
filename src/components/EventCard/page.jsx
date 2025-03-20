@@ -12,14 +12,14 @@ const EventCard = ({ event }) => {
     <div>
       {isModalOpen && (
         <div
-          className="fixed inset-0 bg-[#2a04047f] backdrop-blur-[2px] flex items-center justify-center z-10 transition-all duration-500"
+          className="fixed inset-0 bg-[#2a04047f] backdrop-blur-[2px] flex items-center justify-center z-999 transition-all duration-500"
           onClick={onClickHandler}
         >
           <div
-            className="relative w-[850px] h-[500px] flex items-center justify-start px-10 bg-[#2a0404fa] border border-[#FF9500] rounded-4xl shadow-lg transition-all duration-500"
+            className="relative w-[340px] overflow-y-auto  md:w-[850px] h-[550px] flex flex-col md:flex-row items-center justify-start py-4 px-10 bg-[#2a0404fa] border border-[#FF9500] rounded-4xl shadow-lg transition-all duration-500"
             onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside the modal
           >
-            <div className="relative w-[275px] h-[400px] overflow-hidden rounded-xl">
+            <div className="relative w-[200px] h-[300px] md:w-[275px] md:h-[400px] overflow-hidden rounded-xl">
               <Image
                 src={event.poster}
                 fill
@@ -27,14 +27,14 @@ const EventCard = ({ event }) => {
                 alt="thumbnail"
               />
             </div>
-            <div className="w-[500px] h-[400px] flex flex-col items-start justify-between pl-3 py-5">
+            <div className="w-[340px] md:w-[850px] h-[400px] flex flex-col items-start justify-between pl-3 py-5">
               <div>
                 <div className="font-bold text-white">{event.name}</div>
                 <div className="text-base font-semibold mt-1 text-neutral-200">
                   Time: {event.time}
                 </div>
               </div>
-              <div className="w-full h-[250px]   font-normal text-xs text-neutral-400 overflow-y-auto pt-4">
+              <div className="w-full  h-[100px] md:h-[250px] text-wrap  font-normal text-xs text-neutral-400 overflow-y-auto pt-4">
                 {event.description}
               </div>
               <button
