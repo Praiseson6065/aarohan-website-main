@@ -22,9 +22,9 @@ export default function EventDiv({ events }) {
             <div ref={scrollableRef} className="w-full h-full flex flex-col items-center space-y-[12px] relative overflow-y-auto py-4">
                 {events ? (
                     Object.entries(events).map(([slot, eventList]) => (
-                        <div key={slot} className="text-white">
-                            <h2 className=" text-[20px] sm:text-[35px] mb-[20px] mt-[20px]">{slot.substring(0, 6)}</h2>
-                            <div className="flex flex-col space-y-[12px]">
+                        <div key={slot} className="text-white w-full px-5">
+                            <h2 className=" text-[20px] md:text-[35px] mb-[20px] mt-[20px]">{slot.substring(0, 6)}</h2>
+                            <div className="flex flex-col space-y-[12px] w-full justify-items-stretch">
                                 {eventList.map((event, index) => (
                                     <EventTime event={event} key={index} time={slot.substring(6)}/>
                                 ))}
