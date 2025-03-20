@@ -52,7 +52,7 @@ const events = () => {
       const referenceDate = new Date(); // Ensure this is a valid date
       const dayIndex = Math.floor(
         (eventDate - referenceDate) / (1000 * 60 * 60 * 24)
-      )-1;
+      );
 
       if (dayIndex < 0) return; // Ignore past events
       const formattedEntry = {
@@ -83,6 +83,7 @@ const events = () => {
       const data = await response.json();
 
       setRawData(processSheetData(data.data));
+      console.log(processSheetData(data.data));
     } catch (error) {
       setError("Error fetching data: ", error);
     } finally {

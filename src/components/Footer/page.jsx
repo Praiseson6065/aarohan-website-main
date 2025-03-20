@@ -21,9 +21,9 @@ const Footer = () => {
               <h1 className="text-xl mb-2">Sponsors</h1>
             </Link>
           </div>
-          <div className="relative w-[200px] h-[200px]">
+          <div className="relative w-[250px] h-[250px]">
             <Image
-              src={"/assets/aarohan_logo_dark.svg"}
+              src={"/assets/Images/logo.png"}
               alt="AAROHAN Logo"
               fill
               objectFit="cover"
