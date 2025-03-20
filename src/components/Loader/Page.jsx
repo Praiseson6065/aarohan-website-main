@@ -108,7 +108,7 @@ export default function LoadingAnimation({ onComplete }) {
 
                         {/* Logo text */}
                         <motion.div
-                            className="text-6xl font-extrabold text-orange-500"
+                            className="text-5xl font-extrabold text-orange-500"
                             style={{ textShadow: "0 0 15px rgba(255,140,0,0.5)" }}
                             animate={{
                                 textShadow: [

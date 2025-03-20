@@ -55,7 +55,7 @@ const EventCard = ({ event }) => {
       )}
 
       <CardContainer className="inter-var">
-        <CardBody className="bg-[#2a04047f] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[360px] h-[500px] rounded-xl p-6 border shadow-[0px_0px_5px_4px_rgba(217,119,6,0.5)]">
+        <CardBody className="bg-[#2a04047f] relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-[340px] h-[540px] rounded-xl p-6 border shadow-[0px_0px_5px_4px_rgba(217,119,6,0.5)] flex flex-col justify-between">
           <CardItem
             translateZ="50"
             className="w-full text-center text-base  font-bold "
@@ -65,7 +65,7 @@ const EventCard = ({ event }) => {
           <CardItem
             as="div"
             translateZ="60"
-            className="text-[10px] md:text-sm text-nowrap max-w-sm mt-2 text-neutral-100"
+            className="text-[10px] md:text-sm text-nowrap max-w-sm mt-1 text-neutral-100"
           >
             <div className="w-full h-fit flex items-center justify-between">
               <span className="flex items-center">
@@ -82,7 +82,7 @@ const EventCard = ({ event }) => {
               </span>
             </div>
           </CardItem>
-          <CardItem translateZ="100" className="w-full mt-4">
+          <CardItem translateZ="100" className="w-full mt-2">
             <Image
               src={event.poster}
               height="1000"
